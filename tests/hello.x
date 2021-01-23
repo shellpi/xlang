@@ -1,0 +1,2 @@
+hprint "Hello,"
+hprintln "World!"
