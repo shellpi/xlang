@@ -4,7 +4,9 @@ def X_parse(code):
     iter_  = 1
     for c in Code.split('"'):
         if iter_ % 2 == 1:
-            output.append(c.replace(' ', ''))
+            tmp = c.split(' ')
+            for t in tmp:
+                output.append(t)
             iter_ += 1
         else:
             output.append(c)

@@ -36,7 +36,7 @@ class Xlang_interpreter:
             elif word == 'ledoff':
                 self.LEDOFF = True
             else:
-                panic(f'\nX syntax error: Keyword {word} does not exist')
+                panic('\nX syntax error: Keyword {word} does not exist'.format())
 
     def scan(self, code: str):
         Code = X_parse(code)
