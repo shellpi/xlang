@@ -1,4 +1,4 @@
-def __x_parse(code):
+def X_parse(code):
     output = []
     Code   = code.replace('\n', ' ')
     iter_  = 1

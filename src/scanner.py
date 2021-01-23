@@ -1,5 +1,5 @@
-import xparse
-import xerror
+from xparse import *
+from xerror import *
 
 class Xlang_interpreter:
     def __init__(self):
@@ -14,14 +14,16 @@ class Xlang_interpreter:
             print(word)
             self.HPRINTLN = False
         else:
-            if word == 'hprint':
+            if word == '':
+                pass
+            elif word == 'hprint':
                 self.HPRINT = True
             elif word == 'hprintln':
                 self.HPRINTLN = True
             else:
-                xerror.panic(f'X syntax error: Keyword {word} does not exist')
+                panic(f'\nX syntax error: Keyword {word} does not exist')
 
     def scan(self, code: str):
-        Code = xparse.__x_parse(code)
+        Code = X_parse(code)
         for word in Code:
             self.scan_word(word)
