@@ -1,7 +1,7 @@
 from xparse import *
 from xerror import *
+from LED    import *
 
-import pyb
 from time import sleep_ms as sleep
 
 
@@ -21,10 +21,10 @@ class Xlang_interpreter:
             print(word)
             self.HPRINTLN = False
         elif self.LEDON:
-            pyb.LED(int(word)).on()
+            ledon(word)
             self.LEDON = False
         elif self.LEDOFF:
-            pyb.LED(int(word)).off()
+            ledoff(word)
             self.LEDOFF = False
         elif self.SLEEP:
             sleep(int(word))
@@ -44,6 +44,7 @@ class Xlang_interpreter:
                 self.SLEEP = True
             else:
                 panic('\nX syntax error: Keyword {word} does not exist'.format())
+                raise SystemExit
 
     def scan(self, code: str):
         Code = X_parse(code)
