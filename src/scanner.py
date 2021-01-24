@@ -44,7 +44,6 @@ class Xlang_interpreter:
                 self.SLEEP = True
             else:
                 panic('\nX syntax error: Keyword {word} does not exist'.format())
-                raise SystemExit
 
     def scan(self, code: str):
         Code = X_parse(code)
